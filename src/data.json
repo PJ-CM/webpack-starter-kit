@@ -1,0 +1,11 @@
+{
+  "name": "Webpack",
+  "links": [
+    ["Webpack", "index.html"],
+    ["Vanilla JS", "aloha-vanilla.html"],
+    ["React", "aloha-react.html"],
+    ["Vue.js", "aloha-vue.html"],
+    ["TypeScript", "aloha-ts.html"],
+    ["TODO", "to-do.html"]
+  ]
+}

@@ -1,0 +1,61 @@
+@font-face {
+  font: {
+    family: "Chalet";
+    style: normal;
+    weight: normal;
+  }
+
+  //Ni el primer par, ni el segundo funcionan
+  // src: url('../fonts/Chalet.eot');
+  // src: url('../fonts/Chalet.eot?#iefix') format('embedded-opentype'),
+  //   url('../fonts/Chalet.woff') format('woff'),
+  //--------------------------------------------------------------------
+  // src: url("../fonts/Chalet.eot");
+  // src: url("../fonts/Chalet.eot?#iefix") format("embedded-opentype");
+  //--------------------------------------------------------------------
+  src: url("../fonts/Chalet.woff") format("woff"),
+    url("../fonts/Chalet.ttf") format("truetype"),
+    url("../fonts/Chalet.svg#Chalet") format("svg");
+}
+
+html {
+  color: white;
+  background: {
+    color: #2b3a42;
+    image: url("../img/webpack-cube.svg");
+    repeat: repeat;
+    position: center;
+    attachment: fixed;
+    size: 10%;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Chalet";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  padding: 2rem;
+  width: 80%;
+  text-align: center;
+  background-color: rgba($color: #2b3a42, $alpha: 0.9);
+}
+
+.Menu {
+  display: flex;
+  justify-content: space-evenly;
+
+  // Para todos los elementos A dentro de .Menu
+  & a {
+    color: #8dd6f9;
+    transition: all 1s ease;
+  }
+  & a:hover {
+    opacity: 0.5;
+  }
+}

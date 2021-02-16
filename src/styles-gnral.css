@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #8dd6f9;
+  background-color: #2b3a42;
+}
+
+#app div {
+  margin: 0 auto;
+  padding: 31% 0;
+  width: 50%;
+}
+
+#app div p {
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(255, 196, 0);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 2rem;
+  transition: all 0.5s;
+}
+#app div p:hover {
+  /* color: black; */
+  text-shadow: 3px 3px 5px rgb(53, 52, 51);
+  cursor: pointer;
+}
+
+/* Prueba de PostCSS y Autoprefixer :: ini */
+.flexbox {
+  display: flex;
+}
+
+.transform {
+  transform: rotate(180deg);
+}
+/* Prueba de PostCSS y Autoprefixer :: fin */

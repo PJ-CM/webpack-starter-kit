@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Dando un margen a todo elemento hijo de #app
+y a todo elemento que sea hijo de un DIV que sea hijo de #app */
+#app > *,
+#app > div > * {
+  margin: 1rem auto;
+}
