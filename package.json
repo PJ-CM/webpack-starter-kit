@@ -36,7 +36,8 @@
     "build-prod": "webpack --mode production",
     "build-dev-2": "webpack --mode development ./foo/src/index.js --output-path ./foo",
     "build-prod-2": "webpack --mode production ./foo/src/index.js --output-path ./foo",
-    "start": "webpack serve --mode development --open"
+    "start": "webpack serve --mode development --open",
+    "start-prod": "webpack serve --mode production --open"
   },
   "author": "",
   "license": "ISC",

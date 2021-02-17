@@ -39,41 +39,29 @@
 /************************************************************************/
 
 ;// CONCATENATED MODULE: ./src/data.json
-const data_namespaceObject = JSON.parse("{\"links\":[[\"Webpack\",\"index.html\"],[\"Vanilla JS\",\"aloha-vanilla.html\"],[\"React\",\"aloha-react.html\"],[\"Vue.js\",\"aloha-vue.html\"],[\"TypeScript\",\"aloha-ts.html\"],[\"TODO\",\"to-do.html\"]]}");
-;// CONCATENATED MODULE: ./src/img/js-logo.png
-/* harmony default export */ const js_logo = (__webpack_require__.p + "assets/js-logo.png");
-;// CONCATENATED MODULE: ./src/Aloha.js
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Aloha = /*#__PURE__*/function () {
-  function Aloha(name) {
-    _classCallCheck(this, Aloha);
-
-    this.name = name;
-  }
-
-  _createClass(Aloha, [{
-    key: "greet",
-    value: function greet() {
-      return "Aloha, Webpack con ".concat(this.name, " !!");
-    }
-  }]);
-
-  return Aloha;
-}();
-;// CONCATENATED MODULE: ./src/aloha_vanilla.js
+const data_namespaceObject = JSON.parse("{\"name\":\"Webpack\",\"links\":[[\"Webpack\",\"index.html\"],[\"Vanilla JS\",\"aloha-vanilla.html\"],[\"React\",\"aloha-react.html\"],[\"Vue.js\",\"aloha-vue.html\"],[\"TypeScript\",\"aloha-ts.html\"],[\"TODO\",\"to-do.html\"]]}");
+;// CONCATENATED MODULE: ./src/img/webpack-logo.svg
+/* harmony default export */ const webpack_logo = (__webpack_require__.p + "assets/webpack-logo.svg");
+;// CONCATENATED MODULE: ./src/index.js
  // o
 // import "./styles.css";
 
 
 
 
+console.log("Aloha MuNDo desde Donostia sin webpack.config.js!!");
+console.log("process.env.NODE_ENV", "production");
+var arr = [1, 2, 4];
 
-console.log("Aloha MuNDo desde Donostia con VanillaJS desde Webpack!!");
+var codeES6 = function codeES6() {
+  var _console;
+
+  return (_console = console).log.apply(_console, arr);
+};
+
+codeES6(); // Imprimiendo el objeto completo y el valor de una de sus claves
+
+console.log(data_namespaceObject, data_namespaceObject.name);
 /* ****************************************** */
 
 var d = document,
@@ -81,15 +69,14 @@ var d = document,
     h1 = d.createElement("h1"),
     p = d.createElement("p"),
     img = d.createElement("img"),
-    nav = d.createElement("nav"),
-    aloha = new Aloha("VanillaJS");
+    nav = d.createElement("nav");
 var menu = "";
 data_namespaceObject.links.forEach(function (link) {
   return menu += "<a href=\"".concat(link[1], "\">").concat(link[0], "</a>");
 });
-h1.textContent = "Webpack + VanillaJS";
-p.innerHTML = aloha.greet() + "<br>" + "Creando la primera aplicación con Webpack";
-img.src = js_logo;
+h1.textContent = "Webpack";
+p.textContent = "Creando la primera aplicación con Webpack";
+img.src = webpack_logo;
 nav.classList.add("Menu");
 nav.innerHTML = menu;
 app.appendChild(nav);

@@ -8,6 +8,8 @@ import logo from "./img/webpack-logo.svg";
 
 console.log("Aloha MuNDo desde Donostia sin webpack.config.js!!");
 
+console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+
 const arr = [1, 2, 4];
 let codeES6 = () => console.log(...arr);
 

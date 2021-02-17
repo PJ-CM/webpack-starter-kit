@@ -167,7 +167,13 @@ module.exports = {
       chunks: ["todo"]
     })
   ],
-  devtool: "inline-source-map",
+  // -> Configuración adecuada para DESARROLLO
+  // devtool: "inline-source-map",
+  // -> Configuración adecuada para PRODUCCIÓN - Debug de Errores
+  // devtool: "source-map",
+  // -> Configuración adecuada para PRODUCCIÓN - Debug de Errores
+  // Omitir la Opción directamente
+  devtool: false,
   devServer: {
     port: 9009,
     hotOnly: true,
