@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"),
   // ASÍ NO
   // CleanWebpackPlugin = require("clean-webpack-plugin")
   // ASÍ Si
-  { CleanWebpackPlugin } = require("clean-webpack-plugin"),
+  // { CleanWebpackPlugin } = require("clean-webpack-plugin"),
   { VueLoaderPlugin } = require("vue-loader");
 
 const path = require("path");
@@ -23,7 +23,12 @@ module.exports = {
     todo: "./src/to_do.js"
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    // Para evitar mensaje de advertencia del CleanWebpackPlugin
+    // path: path.resolve(__dirname, "dist"),
+    //---------------------------------------------------------
+    // Con esta propiedad de la versión 5.20.0+, ya no es necesario
+    // el CleanWebpackPlugin para una limpieza básica
+    clean: true,
     filename: "[name].[chunkhash].js"
   },
   module: {
@@ -120,11 +125,14 @@ module.exports = {
     // ASÍ NO
     // new CleanWebpackPlugin(["dist/**/*.*"]),
     // ASÍ Si
-    new CleanWebpackPlugin({
-      // cleanOnceBeforeBuildPatterns: ["dist/**/*.*"],
-      cleanOnceBeforeBuildPatterns: [path.join(__dirname, "dist/**/*")]
-    }),
-    ////new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin({
+    //   // cleanOnceBeforeBuildPatterns: ["dist/**/*.*"],
+    //   cleanOnceBeforeBuildPatterns: [path.join(__dirname, "dist/**/*")]
+    // }),
+    //new CleanWebpackPlugin(),
+    //---------------------------------------------------------
+    // Con el output.clean de la versión 5.20.0+, ya no es necesario
+    // el CleanWebpackPlugin para una limpieza básica
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
