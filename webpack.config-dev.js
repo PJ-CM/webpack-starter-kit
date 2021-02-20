@@ -6,6 +6,9 @@ module.exports = merge(commonConfig, {
   // -> Configuración adecuada para DESARROLLO
   devtool: "inline-source-map",
   devServer: {
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
     port: 9009,
     hotOnly: true,
     hot: true
