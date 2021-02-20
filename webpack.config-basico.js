@@ -1,24 +1,19 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin"),
   MiniCssExtractPlugin = require("mini-css-extract-plugin"),
   CssMinimizerPlugin = require("css-minimizer-webpack-plugin"),
+  // ASÍ NO
+  // CleanWebpackPlugin = require("clean-webpack-plugin")
+  // ASÍ Si
+  // { CleanWebpackPlugin } = require("clean-webpack-plugin"),
   { VueLoaderPlugin } = require("vue-loader");
 
 const path = require("path");
 
 module.exports = {
-  mode: "production",
-  // -> Configuración adecuada para PRODUCCIÓN - Debug de Errores
-  // devtool: "source-map",
-  // -> Configuración adecuada para PRODUCCIÓN - Debug de Errores
-  // Omitir la Opción directamente
-  devtool: false,
-  // Si no se fuera a probar la compilación de PRODUCCIÓN con el
-  // servidor de desarrollo, este bloque podría omitirse
-  devServer: {
-    port: 9009,
-    hotOnly: true,
-    hot: true
-  },
+  // output: {
+  //   path: path.resolve(__dirname, "dist"),
+  // },
+  //---------------------------------------------------------
   entry: {
     js: "./src/index.js",
     vanilla: "./src/aloha_vanilla.js",
@@ -28,6 +23,14 @@ module.exports = {
     todo: "./src/to_do.js"
   },
   output: {
+    // Si el directorio de salida es el predeterminado ("./dist"),
+    // no es necesario especificar este parámetro de configuración.
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Para evitar mensaje de advertencia del CleanWebpackPlugin
+    // path: path.resolve(__dirname, "dist"),
+    //---------------------------------------------------------
+    // Con esta propiedad de la versión 5.20.0+, ya no es necesario
+    // el CleanWebpackPlugin para una limpieza básica
     clean: true,
     filename: "[name].[chunkhash].js"
   },
@@ -177,5 +180,17 @@ module.exports = {
       hash: true,
       chunks: ["todo"]
     })
-  ]
+  ],
+  // -> Configuración adecuada para DESARROLLO
+  // devtool: "inline-source-map",
+  // -> Configuración adecuada para PRODUCCIÓN - Debug de Errores
+  // devtool: "source-map",
+  // -> Configuración adecuada para PRODUCCIÓN - Debug de Errores
+  // Omitir la línea de Opción directamente o establecerla a FALSE
+  devtool: false,
+  devServer: {
+    port: 9009,
+    hotOnly: true,
+    hot: true
+  }
 };

@@ -6,14 +6,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"),
 const path = require("path");
 
 module.exports = {
-  mode: "production",
-  // -> Configuración adecuada para PRODUCCIÓN - Debug de Errores
-  // devtool: "source-map",
-  // -> Configuración adecuada para PRODUCCIÓN - Debug de Errores
-  // Omitir la Opción directamente
-  devtool: false,
-  // Si no se fuera a probar la compilación de PRODUCCIÓN con el
-  // servidor de desarrollo, este bloque podría omitirse
+  mode: "development",
+  // -> Configuración adecuada para DESARROLLO
+  devtool: "inline-source-map",
   devServer: {
     port: 9009,
     hotOnly: true,
