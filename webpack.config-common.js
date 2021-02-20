@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin"),
   MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-  CssMinimizerPlugin = require("css-minimizer-webpack-plugin"),
   { VueLoaderPlugin } = require("vue-loader");
 
 const path = require("path");
@@ -98,14 +97,6 @@ module.exports = {
         //   },
         // },
       }
-    ]
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new CssMinimizerPlugin({
-        sourceMap: true
-      })
     ]
   },
   plugins: [
